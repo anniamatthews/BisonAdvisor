@@ -7,7 +7,7 @@ import uuid
 import os
 from firebase_admin import firestore, credentials, db
 from flask_wtf import FlaskForm
-
+from config import config
 
 UPLOAD_FOLDER = '/Users/test/bison-swe/uploaded_files'
 ALLOWED_EXTENSIONS = {'txt', 'pdf'}
@@ -15,26 +15,10 @@ ALLOWED_EXTENSIONS = {'txt', 'pdf'}
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-
-
-
-config = {    
-    'apiKey': "AIzaSyDoZdVffsnC7h6FsYO5aPvaELW2BLERW9Y",
-    'authDomain': "advisor-dev-95e86.firebaseapp.com",
-    'projectId': "advisor-dev-95e86",
-    'storageBucket': "advisor-dev-95e86.appspot.com",
-    'messagingSenderId': "162788724888",
-    'appId': "1:162788724888:web:8240e343dfba0beade80ed",
-    'databaseURL' : 'https://advisor-dev-95e86-default-rtdb.firebaseio.com/'
-}
-
 firebase = pyrebase.initialize_app(config)
 auth = firebase.auth()
 db = firebase.database()
 storage = firebase.storage()
-
-
-
 
 app.secret_key = 'secret-key'
 

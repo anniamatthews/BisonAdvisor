@@ -31,4 +31,4 @@
 <p>I'm not sure what I want to keep or add to make it more functional. For now, the navigation works so I won't mess with it too much in the first iteration.</p>
 
 <h3>Wireframes and Mockups</h3>
-<p>TODO: create wireframes and figma mockups </p>
+🎨 <a href="https://www.figma.com/design/DsWiYpqmo5BLHxJUxcjrCP/Untitled?node-id=1-2&t=gF6OGw91rGOLkiEH-1"> figma.com </a>

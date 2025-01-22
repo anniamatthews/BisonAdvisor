@@ -34,7 +34,7 @@ def index():
             session['user'] = email
         except: 
             return 'Failed to log in '
-    return render_template('login.html')
+    return render_template('index.html')
 
 @app.route('/select_role', methods=['POST', 'GET'])
 def select_role():

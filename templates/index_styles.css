@@ -1,0 +1,35 @@
+body {
+    background-color: A6B8ED;
+    margin: 0;
+}
+
+.header {
+    width: 100%; 
+    height: 100px;
+    background-color: #800000;
+    opacity: .5;
+    position: fixed; 
+    top: 0px; 
+    left: 0px;
+    
+}
+
+.content {
+    width: 100%; 
+    height: calc(100vh - 100px);
+    display: flex; 
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    margin-top: 100px; /* Prevent overlap with the fixed header */
+    box-sizing: border-box; /* Ensures padding doesn't affect width/height */
+}
+
+
+.main {
+    width: 550px;
+    height: 600px;
+    background-color: #800000;
+    opacity: .5;
+    border-radius: 10%;
+    border: 1rem solid #0A122A;
+}

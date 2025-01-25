@@ -5,7 +5,7 @@ import pyrebase
 import firebase_admin
 import uuid
 import os
-from firebase_admin import firestore, credentials, db
+from firebase_admin import firestore, credentials, db, auth
 from flask_wtf import FlaskForm
 from config import config
 
@@ -22,19 +22,17 @@ storage = firebase.storage()
 
 app.secret_key = 'secret-key'
 
-@app.route('/', methods = ['POST', 'GET'])
+@app.route('/')
 def index():
-    if('user' in session):
-        return redirect('/select_role')
-    if request.method == 'POST':
-        email = request.form.get('email')
-        password = request.form.get('Password')
-        try: 
-            user = auth.sign_in_with_email_and_password(email,password)
-            session['user'] = email
-        except: 
-            return 'Failed to log in '
     return render_template('index.html')
+
+@app.route('/sign-in')
+def sign_in(): 
+    return render_template('/sign-in.html')
+
+@app.route('/register')
+def register(): 
+    return render_template('/register.html')
 
 @app.route('/select_role', methods=['POST', 'GET'])
 def select_role():

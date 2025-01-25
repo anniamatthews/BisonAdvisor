@@ -50,16 +50,22 @@ p {
     margin-bottom: 2rem;
 }
 
-.sign-in, .register {
-    color: #FFFFFF;
-    background-color: #0A122A;
+
+
+.sign-in, .register{
+    display: inline-block;
     width: 175px; 
-    height: 65px;
-    font-size: 30px;
     padding: 10px;
+    margin: 5px;
+    text-align: center;   
+    color: #FFFFFF;
+    background-color: #0A122A;   
+    font-size: 30px;
+    cursor: pointer;
     border-radius: 12px;
     border: none;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    text-decoration: none;
 }
 
 .sign-in:hover, .register:hover {

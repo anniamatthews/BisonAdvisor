@@ -4,10 +4,11 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Landing Page</title>
-        <link rel="stylesheet" href="index_styles.css"/>
+        <link rel="stylesheet" href="static/index_styles.css"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='index_styles.css') }}">
+
         
     </head>
     <body>
@@ -15,13 +16,13 @@
         <div class="content">
             <div class="main-card">
                 <h1 class="card-title">This is a Fake Site</h1>
-                <img src="trophy.png" alt="trophy">
+                <img src="static/trophy.png" alt="trophy">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
                 <div class="buttons">
-                    <button class="sign-in">Sign In</button>
-                    <button class="register">Register</button>
+                    <a class="sign-in" href="{{url_for('sign_in') }}">Sign In</a>
+                    <a class="register" href="{{url_for('register')}}">Register</a>
                 </div>
             </div>
         </div>

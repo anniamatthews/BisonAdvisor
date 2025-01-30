@@ -31,7 +31,7 @@ def index():
 def register(): 
     return render_template('/register.html')
 
-
+'''There's currently an error in this that doesn't catch the session correctly, so it redirects an authenticated user to the landimg page'''
 @app.route('/dashboard')
 def dashboard(): 
     if 'user' not in session: 

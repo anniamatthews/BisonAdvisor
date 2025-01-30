@@ -24,15 +24,42 @@ app.secret_key = 'secret-key'
 
 @app.route('/')
 def index():
+    print('sign in link',url_for('sign_in'))
     return render_template('index.html')
-
-@app.route('/sign-in')
-def sign_in(): 
-    return render_template('/sign-in.html')
 
 @app.route('/register')
 def register(): 
     return render_template('/register.html')
+
+
+@app.route('/dashboard')
+def dashboard(): 
+    if 'user' not in session: 
+        return redirect(url_for('index'))  # Correct redirect
+    return render_template('dashboard.html')
+
+@app.route('/sign-in', methods=['GET', 'POST'])
+def sign_in(): 
+    unsuccessful = 'Pls check your credentials'
+    successful = 'good'
+    if request.method == 'POST': 
+        try: 
+            email = request.form['name']
+            password = request.form['pass']
+            try:
+                auth.sign_in_with_email_and_password(email, password)
+                return redirect(url_for('dashboard'))
+            except Exception as e: 
+                print('login failed', str(e))
+                return render_template('sign-in.html', us=unsuccessful)
+        except Exception as e: 
+            print('failed', str(e))
+    return render_template('/sign-in.html')
+
+
+
+
+
 
 @app.route('/select_role', methods=['POST', 'GET'])
 def select_role():
